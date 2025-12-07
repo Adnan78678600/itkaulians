@@ -85,7 +85,12 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
             setMessages([{ role: 'model', text: `Hey! ${friend.name} here. What's on your mind?` }]);
           }
         } catch (error) {
-          setMessages([{ role: 'model', text: "Connection offline." }]);
+          const apiKey = process.env.API_KEY;
+          if (!apiKey) {
+            setMessages([{ role: 'model', text: "Chat is unavailable. API key not configured." }]);
+          } else {
+            setMessages([{ role: 'model', text: "Connection offline. Please try again." }]);
+          }
         }
       }
     };
@@ -172,6 +177,7 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
           <img
             src={friend.imageUrl}
             alt={friend.name}
+            loading="lazy"
             className="w-full h-full object-cover object-center transition-transform duration-[2s] group-hover:scale-105"
           />
 
@@ -290,7 +296,7 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
             </button>
             <div className="flex items-center gap-3 flex-grow">
               <div className="relative flex-shrink-0">
-                <img src={friend.imageUrl} className="w-10 h-10 rounded-full object-cover border border-white/10" alt="avatar" />
+                <img src={friend.imageUrl} loading="lazy" className="w-10 h-10 rounded-full object-cover border border-white/10" alt="avatar" />
                 <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-[#09090b] rounded-full"></div>
               </div>
               <div className="min-w-0">

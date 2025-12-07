@@ -19,6 +19,10 @@ const FriendCard: React.FC<FriendCardProps> = ({ friend, onClick }) => {
         <img
           src={friend.imageUrl}
           alt={friend.name}
+          loading="lazy"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%2318181b" width="100" height="100"/><text x="50" y="55" font-size="40" text-anchor="middle" fill="%2371717a">?</text></svg>';
+          }}
           className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 grayscale-[0.4] group-hover:grayscale-0 group-hover:contrast-110"
         />
 

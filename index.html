@@ -1,61 +1,111 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Friends // Dither</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              background: '#0a0a0a',
-              card: '#18181b',
-              accent: '#ffffff',
-              muted: '#71717a',
-            },
-            fontFamily: {
-              mono: ['"Space Mono"', 'monospace'],
-              sans: ['"Inter"', 'sans-serif'],
-              display: ['"Syncopate"', 'sans-serif'],
-            }
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITKAULIANS - Friends Grid</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="ITKAULIANS - A beautiful friends grid showcasing the amazing people from Itkauli. Connect and chat with friends in style." />
+  <meta name="keywords" content="ITKAULIANS, Itkauli, Friends, Social, Grid" />
+  <meta name="author" content="ITKAULIANS" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ITKAULIANS - Friends Grid" />
+  <meta property="og:description" content="A beautiful friends grid showcasing the amazing people from Itkauli." />
+  <meta property="og:image" content="/friends/adnan.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ITKAULIANS - Friends Grid" />
+  <meta name="twitter:description" content="A beautiful friends grid showcasing the amazing people from Itkauli." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: '#0a0a0a',
+            card: '#18181b',
+            accent: '#ffffff',
+            muted: '#71717a',
+          },
+          fontFamily: {
+            mono: ['"Space Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Syncopate"', 'sans-serif'],
           }
         }
       }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      body { margin: 0; background-color: #0a0a0a; color: white; overflow-x: hidden; }
-      #root { width: 100%; min-height: 100vh; position: relative; }
-      /* Custom scrollbar to match aesthetic */
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #0a0a0a; }
-      ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-      ::-webkit-scrollbar-thumb:hover { background: #555; }
-      
-      /* Lenis Recommended CSS */
-      html.lenis, html.lenis body {
-        height: auto;
-      }
-      .lenis.lenis-smooth {
-        scroll-behavior: auto !important;
-      }
-      .lenis.lenis-smooth [data-lenis-prevent] {
-        overscroll-behavior: contain;
-      }
-      .lenis.lenis-stopped {
-        overflow: hidden;
-      }
-      .lenis.lenis-scrolling iframe {
-        pointer-events: none;
-      }
-    </style>
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    #root {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Custom scrollbar to match aesthetic */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    /* Lenis Recommended CSS */
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+  </style>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
