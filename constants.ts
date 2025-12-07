@@ -16,10 +16,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Full-stack wizard. Reacts to everything. I build scalable applications with a focus on performance and accessibility.',
     imageUrl: 'https://picsum.photos/400/400?random=1',
     role: 'Developer',
-    stats: { views: '12.5k', likes: '4.2k' },
+    stats: { views: '0', likes: '190' },
     location: 'Itkauli',
     skills: ['React', 'Node.js', 'GraphQL', 'AWS'],
-    projects: 42
+    projects: 124
   },
   {
     id: '2',
@@ -28,10 +28,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Dreaming in 3D. Shader enthusiast. Creating immersive web experiences using WebGL and GLSL.',
     imageUrl: 'https://picsum.photos/400/400?random=2',
     role: '3D Artist',
-    stats: { views: '8.9k', likes: '2.1k' },
+    stats: { views: '35', likes: '358' },
     location: 'Itkauli',
     skills: ['Three.js', 'WebGL', 'Blender', 'GLSL'],
-    projects: 18
+    projects: 137
   },
   {
     id: '3',
@@ -40,10 +40,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'UX Researcher. Finding the truth in data. Passionate about user-centric design patterns.',
     imageUrl: 'https://picsum.photos/400/400?random=3',
     role: 'UX Research',
-    stats: { views: '15.2k', likes: '9.8k' },
+    stats: { views: '18', likes: '302' },
     location: 'Itkauli',
     skills: ['Figma', 'User Testing', 'Data Analysis', 'Psychology'],
-    projects: 35
+    projects: 219
   },
   {
     id: '4',
@@ -52,10 +52,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Cybersecurity & penetration testing. Keeping the digital world safe, one patch at a time.',
     imageUrl: 'https://picsum.photos/400/400?random=4',
     role: 'Security',
-    stats: { views: '22k', likes: '11k' },
+    stats: { views: '2', likes: '320' },
     location: 'Itkauli',
     skills: ['Python', 'Network Security', 'Linux', 'Cryptography'],
-    projects: 56
+    projects: 72
   },
   {
     id: '5',
@@ -76,10 +76,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Hunting bugs and monsters for coin. Specialized in legacy code refactoring.',
     imageUrl: 'https://picsum.photos/400/400?random=6',
     role: 'Freelancer',
-    stats: { views: '33.4k', likes: '15.6k' },
+    stats: { views: '62', likes: '420' },
     location: 'Itkauli',
     skills: ['C++', 'Rust', 'Swordsmanship', 'Alchemy'],
-    projects: 88
+    projects: 545
   },
   {
     id: '7',
@@ -88,10 +88,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Genius, billionaire, playboy, coder. Building the future of AI and robotics.',
     imageUrl: 'https://picsum.photos/400/400?random=7',
     role: 'CTO',
-    stats: { views: '102k', likes: '89k' },
+    stats: { views: '6', likes: '499' },
     location: 'Itkauli',
     skills: ['AI', 'Robotics', 'Quantum Computing', 'React'],
-    projects: 200
+    projects: 141
   },
   {
     id: '8',
@@ -100,10 +100,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Rewriting reality with CSS variables. Front-end magic with a touch of chaos.',
     imageUrl: 'https://picsum.photos/400/400?random=8',
     role: 'Frontend',
-    stats: { views: '18.2k', likes: '6.4k' },
+    stats: { views: '47', likes: '393' },
     location: 'Itkauli',
     skills: ['CSS', 'Animation', 'React', 'Magic'],
-    projects: 12
+    projects: 421
   },
   {
     id: '9',
@@ -112,10 +112,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Designing systems that scale to millions. Microservices aficionado. Cloud native by default.',
     imageUrl: 'https://picsum.photos/400/400?random=9',
     role: 'Architect',
-    stats: { views: '55.2k', likes: '41k' },
+    stats: { views: '91', likes: '1019' },
     location: 'Itkauli',
     skills: ['Kubernetes', 'Docker', 'Go', 'System Design'],
-    projects: 76
+    projects: 133
   },
   {
     id: '10',
@@ -124,10 +124,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Crafting intuitive interfaces that delight users. Pixel perfectionist with a love for minimalist typography.',
     imageUrl: 'https://picsum.photos/400/400?random=10',
     role: 'Product Design',
-    stats: { views: '28.4k', likes: '14.2k' },
+    stats: { views: '20', likes: '123' },
     location: 'Itkauli',
     skills: ['Figma', 'Prototyping', 'Sketch', 'Motion'],
-    projects: 45
+    projects: 103
   },
   {
     id: '11',
@@ -136,10 +136,10 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Automating the boring stuff. CI/CD pipelines are my art form. Infrastructure as Code advocate.',
     imageUrl: 'https://picsum.photos/400/400?random=11',
     role: 'DevOps',
-    stats: { views: '39.1k', likes: '18.5k' },
+    stats: { views: '16', likes: '175' },
     location: 'Itkauli',
     skills: ['Terraform', 'Jenkins', 'AWS', 'Ansible'],
-    projects: 63
+    projects: 130
   },
   {
     id: '12',
@@ -148,9 +148,9 @@ export const FRIENDS_DATA: Friend[] = [
     bio: 'Building seamless mobile experiences for iOS and Android. Performance obsession.',
     imageUrl: 'https://picsum.photos/400/400?random=12',
     role: 'Mobile Dev',
-    stats: { views: '19.8k', likes: '8.7k' },
+    stats: { views: '9', likes: '170' },
     location: 'Itkauli',
     skills: ['Swift', 'Kotlin', 'React Native', 'Flutter'],
-    projects: 29
+    projects: 330
   },
 ];
