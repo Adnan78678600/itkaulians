@@ -1,0 +1,5 @@
+{
+  "name": "FriendGrid - Dither Edition",
+  "description": "A personalized friends landing page featuring high-end WebGL dither shaders and Three.js.",
+  "requestFramePermissions": []
+}
