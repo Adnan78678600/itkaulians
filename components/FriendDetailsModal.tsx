@@ -155,16 +155,10 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
       {/* Main Card Container - Reduced max-width and height for better fit */}
       <div
         ref={cardRef}
-        className="relative w-full max-w-5xl h-[80vh] md:h-[600px] bg-[#09090b]/80 backdrop-blur-3xl border border-white/10 rounded-[32px] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col md:flex-row ring-1 ring-white/5"
+        className="relative w-full max-w-5xl h-[80vh] md:h-[600px] bg-[#09090b]/80 backdrop-blur-3xl rounded-[32px] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button (Desktop) */}
-        <button
-          onClick={handleClose}
-          className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-black/40 text-white/70 hover:bg-white/10 hover:text-white hover:rotate-90 transition-all duration-300 backdrop-blur-md border border-white/5"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
+
 
         {/* --- LEFT COLUMN: IMAGE (Visual) - Set to 50% --- */}
         <div className="relative w-full md:w-1/2 h-2/5 md:h-full group">
@@ -193,7 +187,7 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
         </div>
 
         {/* --- RIGHT COLUMN: DETAILS & CHAT - Set to 50% --- */}
-        <div className="relative w-full md:w-1/2 h-3/5 md:h-full bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden border-l border-white/5">
+        <div className="relative w-full md:w-1/2 h-3/5 md:h-full bg-[#09090b] flex flex-col overflow-hidden">
 
           {/* CONTENT VIEW */}
           <div className={`flex flex-col h-full p-6 md:p-8 transition-all duration-500 ${isChatMode ? 'opacity-0 translate-x-10 pointer-events-none absolute inset-0' : 'opacity-100 translate-x-0 relative'}`}>
@@ -274,78 +268,79 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
             </div>
           </div>
 
-          {/* CHAT INTERFACE OVERLAY */}
-          <div
-            className={`absolute inset-0 z-20 flex flex-col bg-[#09090b]/40 backdrop-blur-xl transition-all duration-500 ease-in-out ${!isChatMode ? 'translate-x-full opacity-0 pointer-events-none' : 'translate-x-0 opacity-100'}`}
-          >
-            {/* Chat Header */}
-            <div className="flex items-center gap-3 px-4 py-4 border-b border-white/5 bg-white/[0.02]">
-              <button
-                onClick={() => setIsChatMode(false)}
-                className="p-2 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex-shrink-0"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-              </button>
-              <div className="flex items-center gap-3 flex-grow">
-                <div className="relative flex-shrink-0">
-                  <img src={friend.imageUrl} className="w-10 h-10 rounded-full object-cover border border-white/10" alt="avatar" />
-                  <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-[#09090b] rounded-full"></div>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-bold text-white text-sm truncate">{friend.name}</h3>
-                  <p className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">{isLoading ? 'Typing...' : 'Online'}</p>
-                </div>
+        </div>
+
+        {/* CHAT INTERFACE OVERLAY - Positioned relative to main card */}
+        <div
+          className={`absolute top-0 bottom-0 right-0 left-0 md:left-1/2 z-30 flex flex-col bg-[#09090b] transition-all duration-500 ease-in-out ${!isChatMode ? 'translate-x-full opacity-0 pointer-events-none' : 'translate-x-0 opacity-100'}`}
+        >
+          {/* Chat Header */}
+          <div className="flex items-center gap-3 px-4 py-4 border-b border-white/5 bg-white/[0.02]">
+            <button
+              onClick={() => setIsChatMode(false)}
+              className="p-2 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex-shrink-0"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <div className="flex items-center gap-3 flex-grow">
+              <div className="relative flex-shrink-0">
+                <img src={friend.imageUrl} className="w-10 h-10 rounded-full object-cover border border-white/10" alt="avatar" />
+                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-[#09090b] rounded-full"></div>
               </div>
-            </div>
-
-            {/* Messages */}
-            <div className="flex-grow overflow-y-auto px-4 py-4 space-y-3 custom-scrollbar">
-              {messages.map((msg, i) => (
-                <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[90%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${msg.role === 'user'
-                    ? 'bg-white text-black font-medium rounded-br-sm'
-                    : 'bg-zinc-800/80 backdrop-blur-sm border border-white/10 text-zinc-100 rounded-bl-sm'
-                    }`}>
-                    {msg.text}
-                  </div>
-                </div>
-              ))}
-
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-zinc-800/50 border border-white/5 px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1.5 items-center">
-                    <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce"></span>
-                    <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce delay-100"></span>
-                    <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce delay-200"></span>
-                  </div>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
-
-            {/* Chat Input */}
-            <div className="px-4 py-4 border-t border-white/5 bg-white/[0.02]">
-              <form onSubmit={handleSendMessage} className="relative">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type a message..."
-                  className="w-full bg-white/5 border border-white/10 rounded-full pl-5 pr-14 py-3.5 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all"
-                  autoFocus={isChatMode}
-                />
-                <button
-                  type="submit"
-                  disabled={!input.trim() || isLoading}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-full hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 transition-all"
-                >
-                  <svg className="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                </button>
-              </form>
+              <div className="min-w-0">
+                <h3 className="font-bold text-white text-sm truncate">{friend.name}</h3>
+                <p className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">{isLoading ? 'Typing...' : 'Online'}</p>
+              </div>
             </div>
           </div>
 
+          {/* Messages */}
+          <div className="flex-grow overflow-y-auto px-4 py-4 space-y-3 custom-scrollbar">
+            {messages.map((msg, i) => (
+              <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`max-w-[90%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${msg.role === 'user'
+                  ? 'bg-white text-black font-medium rounded-br-sm'
+                  : 'bg-zinc-800/80 backdrop-blur-sm border border-white/10 text-zinc-100 rounded-bl-sm'
+                  }`}>
+                  {msg.text}
+                </div>
+              </div>
+            ))}
+
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="bg-zinc-800/50 border border-white/5 px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1.5 items-center">
+                  <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce"></span>
+                  <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce delay-100"></span>
+                  <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce delay-200"></span>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Chat Input */}
+          <div className="px-4 py-4 border-t border-white/5 bg-white/[0.02]">
+            <form onSubmit={handleSendMessage} className="relative">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type a message..."
+                className="w-full bg-white/5 border border-white/10 rounded-full pl-5 pr-14 py-3.5 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:bg-white/10 focus:border-white/20 transition-all"
+                autoFocus={isChatMode}
+              />
+              <button
+                type="submit"
+                disabled={!input.trim() || isLoading}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-full hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 transition-all"
+              >
+                <svg className="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+              </button>
+            </form>
+          </div>
         </div>
+
       </div>
     </div>
   );
