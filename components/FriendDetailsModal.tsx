@@ -133,7 +133,7 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
   return (
     <div 
       ref={modalRef}
-      className="fixed inset-0 z-50 flex items-center justify-center p-2 opacity-0"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 opacity-0"
     >
       {/* Backdrop with Blur */}
       <div 
@@ -141,10 +141,10 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
         onClick={handleClose}
       />
 
-      {/* Main Card Container - Maximized Width to remove right-side gap */}
+      {/* Main Card Container - Reduced max-width and height for better fit */}
       <div 
         ref={cardRef}
-        className="relative w-[98vw] h-[92vh] bg-[#09090b]/80 backdrop-blur-3xl border border-white/10 rounded-[24px] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col md:flex-row ring-1 ring-white/5"
+        className="relative w-full max-w-5xl h-[80vh] md:h-[600px] bg-[#09090b]/80 backdrop-blur-3xl border border-white/10 rounded-[32px] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col md:flex-row ring-1 ring-white/5"
         onClick={(e) => e.stopPropagation()} 
       >
         {/* Close Button (Desktop) */}
@@ -155,8 +155,8 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        {/* --- LEFT COLUMN: IMAGE (Visual) - Set to 65% for cinematic feel --- */}
-        <div className="relative w-full md:w-[65%] h-2/5 md:h-full group">
+        {/* --- LEFT COLUMN: IMAGE (Visual) - Set to 50% --- */}
+        <div className="relative w-full md:w-1/2 h-2/5 md:h-full group">
           {/* Image */}
           <img 
             src={friend.imageUrl} 
@@ -181,8 +181,8 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
           </div>
         </div>
 
-        {/* --- RIGHT COLUMN: DETAILS & CHAT - Set to 35% --- */}
-        <div className="relative w-full md:w-[35%] h-3/5 md:h-full bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden border-l border-white/5">
+        {/* --- RIGHT COLUMN: DETAILS & CHAT - Set to 50% --- */}
+        <div className="relative w-full md:w-1/2 h-3/5 md:h-full bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden border-l border-white/5">
           
           {/* CONTENT VIEW */}
           <div className={`flex flex-col h-full p-6 md:p-8 transition-all duration-500 ${isChatMode ? 'opacity-0 translate-x-10 pointer-events-none absolute inset-0' : 'opacity-100 translate-x-0 relative'}`}>
