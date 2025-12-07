@@ -108,7 +108,7 @@ export const FRIENDS_DATA: Friend[] = [
   {
     id: '9',
     name: 'Zaid',
-    username: 'zaidsiddiqui_',
+    username: 'zaidsiddiqui__',
     bio: 'Designing systems that scale to millions. Microservices aficionado. Cloud native by default.',
     imageUrl: 'https://picsum.photos/400/400?random=9',
     role: 'Architect',

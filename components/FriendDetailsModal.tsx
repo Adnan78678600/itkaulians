@@ -247,15 +247,15 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
               <div className="grid grid-cols-3 gap-3 pt-4">
                 <div className="bg-white/[0.03] rounded-xl p-3 border border-white/5 flex flex-col items-center justify-center hover:bg-white/[0.06] transition-colors">
                   <span className="text-lg font-bold text-white font-mono">{friend.stats.views}</span>
-                  <span className="text-[8px] uppercase tracking-wider text-zinc-500 mt-1">Views</span>
+                  <span className="text-[8px] uppercase tracking-wider text-zinc-500 mt-1">Posts</span>
                 </div>
                 <div className="bg-white/[0.03] rounded-xl p-3 border border-white/5 flex flex-col items-center justify-center hover:bg-white/[0.06] transition-colors">
                   <span className="text-lg font-bold text-white font-mono">{friend.stats.likes}</span>
-                  <span className="text-[8px] uppercase tracking-wider text-zinc-500 mt-1">Likes</span>
+                  <span className="text-[8px] uppercase tracking-wider text-zinc-500 mt-1">Followers</span>
                 </div>
                 <div className="bg-white/[0.03] rounded-xl p-3 border border-white/5 flex flex-col items-center justify-center hover:bg-white/[0.06] transition-colors">
                   <span className="text-lg font-bold text-white font-mono">{friend.projects}</span>
-                  <span className="text-[8px] uppercase tracking-wider text-zinc-500 mt-1">Projects</span>
+                  <span className="text-[8px] uppercase tracking-wider text-zinc-500 mt-1">Following</span>
                 </div>
               </div>
             </div>
