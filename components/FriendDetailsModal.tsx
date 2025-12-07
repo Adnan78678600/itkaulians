@@ -158,7 +158,13 @@ const FriendDetailsModal: React.FC<FriendDetailsModalProps> = ({ friend, onClose
         className="relative w-full max-w-5xl h-[80vh] md:h-[600px] bg-[#09090b]/80 backdrop-blur-3xl rounded-[32px] shadow-[0_0_80px_-20px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-black/40 text-white/70 hover:bg-white/10 hover:text-white hover:rotate-90 transition-all duration-300 backdrop-blur-md border border-white/5"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
 
         {/* --- LEFT COLUMN: IMAGE (Visual) - Set to 50% --- */}
         <div className="relative w-full md:w-1/2 h-2/5 md:h-full group">
